@@ -77,7 +77,7 @@
 	<plugin name="cordova-plugin-sms" source="npm" />
 	<plugin name="cordova-sms-plugin" source="npm" />
 	
-	
+	<plugin name="cordova-plugin-cleartext" source="npm" spec="~1.0.0" />
 	
 <platform name="ios">
 <icon src="res/icon/ios/icon-1024.png" width="1024" height="1024"/>
