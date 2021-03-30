@@ -28,15 +28,15 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //document.getElementById("cameraTakePicture").addEventListener("click", cameraTakePicture); 
 
 function onDeviceReady() {
-   
+   alert("test1");
    var uuid = device.uuid;
 	var uuid2 = device.uuid;
 	uuidglobe = uuid;
-	
+	 alert("test2");
 	//watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError);//getCurrentPosition //watchPosition //not required at the app load 
 	
-	setglobalempno(uuid2);
-	getempname(uuid);
+	setglobalempno(uuid2); alert("test3");
+	getempname(uuid); alert("test4");
 	
 	//setupPush();
 		
@@ -686,79 +686,6 @@ function photoviewer(imagelist) {
     myPhotoBrowserPopupDark.open();
 } 
 
-
-
-////push notification
-
- function setupPush() {
-        //console.log('calling push init');
-        var push = PushNotification.init({
-            "android": {
-                "senderID": "497359240528",
-				"badge": true
-				
-            },
-            "browser": {},
-            "ios": {
-                "sound": true,
-                "vibration": true,
-                "badge": true
-            },
-            "windows": {}
-        });
-        //console.log('after init');
-
-        push.on('registration', function(data) {
-            //console.log('registration event: ' + data.registrationId);
-
-			var data2 = data.registrationId;
-			
-			
-            var oldRegId = localStorage.getItem('registrationId');
-            if (oldRegId !== data.registrationId) {
-                // Save new registration ID
-                localStorage.setItem('registrationId', data.registrationId);
-                // Post registrationId to your app server as the value has changed
-				
-					var username="admin";
-					var dataString = "registrationId=" + data.registrationId + "&username=" + username + "&updatepushregid=";
-					$.ajax({
-						type: "POST",
-						url: "http://124.43.160.52/accessconex/phonegap-app/update.php",
-						data: dataString,
-						crossDomain: true,
-						cache: false,
-						beforeSend: function() {},
-						success: function(data) {}
-					});
-					
-					//alert(data2);
-            }
-
-            /* var parentElement = document.getElementById('registration');
-            var listeningElement = parentElement.querySelector('.waiting');
-            var receivedElement = parentElement.querySelector('.received');
-
-            listeningElement.setAttribute('style', 'display:none;');
-            receivedElement.setAttribute('style', 'display:block;'); */
-        });
-
-        push.on('error', function(e) {
-            console.log("push error = " + e.message);
-        });
-
-        push.on('notification', function(data) {
-            console.log('notification event');
-			
-            navigator.notification.alert(
-                data.message,         // message
-                null,                 // callback
-                data.title,           // title
-                'Ok'                  // buttonName
-            );
-			//window.location.href = "spec3.html";  
-       });
-    }
 
 
 
