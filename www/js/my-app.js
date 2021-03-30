@@ -305,6 +305,7 @@ function setglobalempno(uuid2) {
         $.getJSON(url,{uuid2:uuid2}, function(result) {
             console.log(result);
                 empno= result;
+				alert("test5");
         });
     }
 
