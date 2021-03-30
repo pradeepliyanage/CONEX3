@@ -38,7 +38,7 @@ function onDeviceReady() {
 	setglobalempno(uuid2);
 	getempname(uuid);
 	
-	setupPush();
+	//setupPush();
 		
 				
     
