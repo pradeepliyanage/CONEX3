@@ -130,9 +130,6 @@
 
 	
     <access origin="*" />
-	<edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-    <application android:usesCleartextTraffic="true" />
-	</edit-config>
 	<allow-navigation href="http://*/*" />
 	<allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -144,16 +141,11 @@
 	
 
 
-	
 	<platform name="android">
-    <allow-navigation href="http://*/*" />
-	<allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    </platform>
+  <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+      <application android:usesCleartextTraffic="true" />
+  </edit-config>
+</platform>
 	
 	<platform name="ios">
         <allow-intent href="itms:*" />
