@@ -2,7 +2,7 @@
   "name": "conex3",
   "version": "1.0.0",
   "description": "conex3",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "test": "test"
   },
