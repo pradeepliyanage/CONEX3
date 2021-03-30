@@ -300,12 +300,13 @@ function getempname(uuid) {
     }
 	
 function setglobalempno(uuid2) {	
-		
+		alert("test5");
         var url = "http://124.43.160.52/accessconex/phonegap-app/json.php";
         $.getJSON(url,{uuid2:uuid2}, function(result) {
-            console.log(result);
+			alert("test6");
+            
                 empno= result;
-				alert("test5");
+				alert("test7");
         });
     }
 
