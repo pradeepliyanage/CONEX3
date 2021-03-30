@@ -1,0 +1,7 @@
+{
+  "name": "conex3",
+  "type": "custom",
+  "integrations": {
+    "cordova": {}
+  }
+}

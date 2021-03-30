@@ -1,0 +1,22 @@
+{
+  "name": "conex3",
+  "version": "1.0.0",
+  "description": "conex3",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pradeepliyanage/CONEX3.git"
+  },
+  "keywords": [
+    "conex"
+  ],
+  "author": "Pradeep Liyanage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pradeepliyanage/CONEX3/issues"
+  },
+  "homepage": "https://github.com/pradeepliyanage/CONEX3#readme"
+}
