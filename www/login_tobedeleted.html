@@ -1,0 +1,146 @@
+<html>
+
+<head>
+   
+	
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+	
+    <!--<link rel="stylesheet" type="text/css" href="css/ionic.css">  dropped with framework 7-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/geturi.js"></script>
+    <script type="text/javascript">
+	
+	
+	$(document).ready(function() {
+
+	    var id = decodeURI(getUrlVars()["idlogin"]);
+		//var dt = new Date();
+		//var q= dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
+		//var type = decodeURI(getUrlVars()["type"]);
+        $("#idlogin").val(idlogin);
+        //$("#username").val(parent.uuidglobe+"t");
+        //$("#type").val(type);
+		
+		$("#update").click(function() {
+            var idlogin = $("#idlogin").val();
+            var username = $("#username").val();
+            var password = $("#password").val();
+			var empnotemp = parent.empno;
+			var uuid = parent.uuidglobe;
+			//getCurrentPosition();
+			//var locationlat = parent.locationlat;
+			//var locationlon = parent.locationlon;
+			//var locationerror = parent.locationerror;
+            
+            var dataString = "idlogin=" + idlogin + "&username=" + username + "&password=" + password + "&empno=" + empnotemp + "&uuid=" + uuid + "&updateloginuuid=";
+            $.ajax({
+                type: "POST",
+                url: "https://inframs.mobitel.lk/Mobitel_infraDB/phonegap-app/php/update.php",
+                data: dataString,
+                crossDomain: true,
+                cache: false,
+                beforeSend: function() {
+                    $("#update").val('Connecting...');
+                },
+                success: function(data) {
+                   // if (data == "success") {
+                        alert(data);
+                        $("#update").val("Update");
+						//window.location.href = "home.html";
+						//parent.location.reload();
+						//parent.location.href=parent.location.href
+						window.location.href= "index.html";
+						
+                    //} else if (data == "error") {
+                       // alert("ERROR!!!");
+						//$("#update").val("Update");
+                    //}
+                }
+            });
+
+        });
+        
+    });
+    </script>
+</head>
+
+<body>
+	
+<div class = "views">
+         <div class = "view view-main">
+            <div class = "pages">
+               <div data-page = "home" class = "page navbar-fixed">
+                  <div class = "navbar">
+                     <div class = "navbar-inner">
+                        <div class = "left"> </div>
+                        <div class = "center">Mobitel InfraMS</div>
+                        <div class = "right"> </div>
+                     </div>
+                  </div>
+                  
+                  <div class = "page-content">
+                     <div class = "content-block-title">Register User</div>
+                     <div class = "list-block">
+                        <ul>
+                           <li>
+                              <div class = "item-content">
+                                 <div class = "item-media"><i class = "icon icon-form-name"></i></div>
+                                 <div class = "item-inner">
+                                    <div class = "item-title label">UserName</div>
+                                    <div class = "item-input">
+                                       <input type = "text" id="username" name="username"  value="" placeholder = "Enter your name">
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                           
+                           
+                           
+                           <li>
+                              <div class = "item-content">
+                                 <div class = "item-media"><i class = "icon icon-form-password"></i></div>
+                                 <div class = "item-inner">
+                                    <div class = "item-title label">Password</div>
+                                    <div class = "item-input">
+                                       <input type = "password" id="password" name="password"  value="" placeholder = "Enter your password">
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                           
+                           
+                           
+                        <li>
+                              <div class = "item-content">
+                                <div class = "item-inner">
+                                    <div class = "item-title label"></div>
+                                    <div class = "item-input">
+									   <input type="hidden" id="idlogin" value="" />
+                                       <br><br><input type="button" id="update" class="button button-big button-fill color-blue" value="Update" /><br><br>
+									   
+                                    </div>
+                                 </div>
+                              </div>
+							  
+							  
+                           </li>   
+                           
+                           
+                        </ul>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+</body>
+
+</html>
