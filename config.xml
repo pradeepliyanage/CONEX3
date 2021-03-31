@@ -18,7 +18,7 @@
 
 	 
 	<plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
-    <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" >
+    <plugin name="cordova-plugin-camera" source="npm" spec="~5.0.1" >
 	 <variable name="CAMERA_USAGE_DESCRIPTION" value="Use Camera" />
    <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Select Photo" />
     </plugin>
@@ -30,7 +30,7 @@
 	<plugin name="cordova-plugin-ios-camera-permissions" source="npm" spec="~1.2.0" />
 	
 	
-	<plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" >
+	<plugin name="cordova-plugin-media-capture" source="npm" spec="~3.0.3" >
 		<variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />
 	  <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
 	  <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App would like to access the library." />
